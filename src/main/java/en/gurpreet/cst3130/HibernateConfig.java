@@ -6,7 +6,9 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  *  Hibernate configuration file
@@ -37,7 +39,12 @@ public class HibernateConfig {
 
             //Load configuration from hibernate configuration file.
             //Here we are using a configuration file that specifies Java annotations.
-            standardServiceRegistryBuilder.configure("hibernate-annotations.cfg.xml");
+
+System.out.println("hellooo" + System.getenv("MYSQL_PRIVATE_URL") + System.getenv("MYSQL_USER") + System.getenv("MYSQL_ROOT_PASSWORD") );
+            standardServiceRegistryBuilder.configure("hibernate-annotations.cfg.xml").
+                    applySetting("hibernate.connection.url", System.getenv("MYSQL_PRIVATE_URL")).
+                    applySetting("hibernate.connection.username", System.getenv("MYSQL_USER")).
+                    applySetting("hibernate.connection.password", System.getenv("MYSQL_ROOT_PASSWORD"));
 
             //Create the registry that will be used to build the session factory
             StandardServiceRegistry registry = standardServiceRegistryBuilder.build();

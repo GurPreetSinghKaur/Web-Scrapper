@@ -4,14 +4,14 @@
   <session-factory>
     <!-- Database connection properties - Driver, URL, user, password -->
     <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://localhost/web_scrapper_db?serverTimezone=UTC</property>
+    <property name="hibernate.connection.url"></property>
 
-    <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.connection.password">usbw</property>
+    <property name="hibernate.connection.username"></property>
+    <property name="hibernate.connection.password"></property>
     
     <!-- Connection Pool Size -->
     <property name="hibernate.connection.pool_size">6</property>
-    
+
     <!-- org.hibernate.HibernateException: No CurrentSessionContext configured! -->
     <property name="hibernate.current_session_context_class">thread</property>
     

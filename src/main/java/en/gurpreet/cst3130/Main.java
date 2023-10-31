@@ -28,7 +28,6 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-
         //Use Spring Annotation Configuration to set up and run Application
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
