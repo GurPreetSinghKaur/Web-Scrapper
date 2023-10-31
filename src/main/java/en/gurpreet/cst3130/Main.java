@@ -34,7 +34,6 @@ System.out.println("hellooo " + System.getenv("MYSQL_PRIVATE_URL") + System.gete
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
         //Get Scrapper Manager Bean
-
         ScrapperManager threadManager = (ScrapperManager) context.getBean("threadManager");
 
         //Start the threads

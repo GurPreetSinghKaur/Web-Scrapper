@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: en.gurpreet.cst3130.HibernateTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.312 s - in en.gurpreet.cst3130.HibernateTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.161 s <<< FAILURE! - in en.gurpreet.cst3130.HibernateTest
+en.gurpreet.cst3130.HibernateTest  Time elapsed: 0.161 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.hibernate.SessionFactory.openSession()" because "this.sessionFactory" is null
+	at en.gurpreet.cst3130.HibernateTest.init(HibernateTest.java:23)
+
