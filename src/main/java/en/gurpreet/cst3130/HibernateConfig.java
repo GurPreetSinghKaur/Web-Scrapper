@@ -40,7 +40,7 @@ public class HibernateConfig {
             //Load configuration from hibernate configuration file.
             //Here we are using a configuration file that specifies Java annotations.
 
-System.out.println("hellooo" + System.getenv("MYSQL_PRIVATE_URL") + System.getenv("MYSQL_USER") + System.getenv("MYSQL_ROOT_PASSWORD") );
+            System.out.println("hellooo" + System.getenv("MYSQL_PRIVATE_URL") + System.getenv("MYSQL_USER") + System.getenv("MYSQL_ROOT_PASSWORD") );
             standardServiceRegistryBuilder.configure("hibernate-annotations.cfg.xml").
                     applySetting("hibernate.connection.url", System.getenv("MYSQL_PRIVATE_URL")).
                     applySetting("hibernate.connection.username", System.getenv("MYSQL_USER")).
