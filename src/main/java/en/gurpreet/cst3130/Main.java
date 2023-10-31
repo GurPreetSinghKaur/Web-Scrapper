@@ -29,7 +29,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws InterruptedException {
         //Use Spring Annotation Configuration to set up and run Application
-System.out.println("hellooo" + System.getenv("MYSQL_PRIVATE_URL") + System.getenv("MYSQL_USER") + System.getenv("MYSQL_ROOT_PASSWORD") );
+System.out.println("hellooo " + System.getenv("MYSQL_PRIVATE_URL") + System.getenv("MYSQL_USER") + System.getenv("MYSQL_ROOT_PASSWORD") );
 
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
