@@ -78,7 +78,6 @@ public class Argos extends WebScrapper implements Runnable   {
 
                     //   List<String> url   = document.select(".dedmXK").attr("data-test","component-product-card-brand").select("a"); //.eachAttr("href");
                     List<String> url  = document.select(".dedmXK").attr("data-test","component-product-card-brand").select("meta").eachAttr("content");//.select("a");
-    System.out.print("URL IS " + url);
                     //get all the String values from the list
                     String tmpUrl=  url.toString().replace("[","")
                                                   .replace("]","");
@@ -112,7 +111,6 @@ public class Argos extends WebScrapper implements Runnable   {
                             phone.setModel(model[0].replace(" 5G ", "").trim());
                             phone.setColor(utility.getColor());
                             price.setWebsiteUrl("https://www.argos.co.uk"+productUrl[i]);
-
                             //Start Searching for the Image required
                             String search = model[0].replace(" ","-") + utility.getColor().replace(" ", "-");
                             final Document searchForImage = Jsoup.connect("https://www.argos.co.uk/search/"+search+"/category:42793786/brands:apple/").get();

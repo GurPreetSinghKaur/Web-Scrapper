@@ -7,8 +7,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
-
 /**
  *  Web Scrapping Software
  * <p>
@@ -25,7 +23,6 @@ import java.util.Scanner;
  * @version 1.0
  * @since   2021-09-01
  */
-
 public class Main {
     public static void main(String[] args) throws InterruptedException {
         //Use Spring Annotation Configuration to set up and run Application
@@ -46,10 +43,7 @@ System.out.println("hellooo " + System.getenv("MYSQL_PRIVATE_URL") + System.gete
         while(!userInput.equals("q")){
             userInput = inputScanner.nextLine();
         }
-
-
         threadManager.stop();
-
         System.out.print("Threads were stopped");
 
     }

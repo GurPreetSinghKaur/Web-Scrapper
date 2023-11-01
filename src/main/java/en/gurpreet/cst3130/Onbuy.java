@@ -30,7 +30,6 @@ public class Onbuy extends WebScrapper implements Runnable   {
         url = "none";
         website = "none";
     }
-
     //Getters and Setters
     public String getUrl() {
         return url;
@@ -57,13 +56,10 @@ public class Onbuy extends WebScrapper implements Runnable   {
                       int page = 0;
                 for (int pagination = 0; pagination < 1; pagination++) {
 
-
                     System.out.print("Pagination started, scrapped 0 to  " + page + " products \n");
                     String myUrl =  url + page;
 
-
                     final Document document = Jsoup.connect(myUrl).
-                        //    .proxy("194.113.73.85", 8080)
                     ignoreHttpErrors(false).timeout(5000)
 
                             .userAgent("Chrome")
@@ -71,11 +67,7 @@ public class Onbuy extends WebScrapper implements Runnable   {
                     Elements products = document.select(".product");
 
                     //get the name
-              //      List<String> elementName = document.select(".product").eachAttr("data-product_name");
                     List<String> elementName =   products.select(".product").select("a").select("img").eachAttr("alt");
-
-                    //Clean the product names
-                    ArrayList<String> tmpProductList = new ArrayList<>();
 
                     //get all the String values from the list
                     String tempName = elementName.toString().replace("|", "").
@@ -88,10 +80,8 @@ public class Onbuy extends WebScrapper implements Runnable   {
                                     replace("Single SIM","").
                                     replace("Single SIM","").
                                     replace("]","").
-                                    //    replace("  ","").
-                                    //   replace("  ","").
-                                            replace("e]",""). //check if needed
-                                            replace("[","").
+                                    replace("e]",""). //check if needed
+                                    replace("[","").
                                     replace("3GB RAM ","").
                                     replace("PRODUCT", "").
                                     replace("&quot;", "").
@@ -99,9 +89,10 @@ public class Onbuy extends WebScrapper implements Runnable   {
                                     replace("Unlocked","").
                                     replaceAll(",","").
                                     replace("5G", "").
-                            replace("2020", "").
+                                    replace("2020", "").
                                     replace("3GB","").
                                     replace("RAM","");
+
                     //Convert list object to an array
                     String[] productName = tempName.split("Apple");
 
@@ -121,15 +112,6 @@ public class Onbuy extends WebScrapper implements Runnable   {
                     //Convert list object to an array
                     String[] productUrl = tmpUrl.split(", |  ");
 
-      //  document.select(".product").eachAttr("data-product_name").stream().forEach(System.out::println);
-  //    Arrays.stream(productUrl).forEach(System.out::println);
-
-      for (int i = 0 ; i < productName.length - 1; i++ ){
-          System.out.println(productName[i+1] + " " + productUrl[i] + " " + productPrice[i+1] + ""  );
-          System.out.println("productName length is " + productName.length + "productUrl " + productUrl.length + "price lenmgth is " + productPrice.length );
-      }
-
-    System.out.println("this is name"+ products.select(".product").select("a").select("img").eachAttr("alt") );//.eachAttr("data-src"));
                     // Start loop to insert products into the database
                     for (int i = 0; i < productName.length -1; i++) {
 
@@ -148,23 +130,7 @@ public class Onbuy extends WebScrapper implements Runnable   {
                             phone.setStorage(utility.getSize());
                             phone.setModel(model[0].trim().replaceAll(utility.getSize(),""));
                             phone.setColor(utility.getColor());
-
                             price.setWebsiteUrl(productUrl[i]);
-
-                            String search = model[0].trim().replace(" ","-").replace("|","") + "  " + utility.getColor().replace(" ", "-");
-
-                            final Document searchForImage = Jsoup.connect("https://www.argos.co.uk/search/"+search+"/category:42793786/brands:apple/").get();
-                            Elements imageDiv = searchForImage.getElementsByAttributeValue("data-test","component-product-card-imageWrapper").select("img");
-                            //Select Images
-                            List<String> image= imageDiv.eachAttr("src");
-
-                            //get all the String values from the list
-                            String tmpImage=  image.toString().replace("[","")
-                                    .replace("]","");
-                            //Convert list object to an array
-                            String[] productImage = tmpImage.split(", |  ");
-
-                           // phone.setImage("https:"+productImage[0]);
                             phone.setImage(images.get(i));
                             phone.setBrand(utility.getBrand());
                             price.setPrice(formattedPrice);
@@ -173,10 +139,8 @@ public class Onbuy extends WebScrapper implements Runnable   {
                             Phone foundPhone = hibernateConfig.findPhone(phone);
                             //Assign the phone to the price
                             price.setPhone(foundPhone);
-
                             //Find the price if it exists and updated otherwise save it
                             hibernateConfig.findPrice(price);
-
                         }
                     }//Finish loop to products to database
 
@@ -188,8 +152,6 @@ public class Onbuy extends WebScrapper implements Runnable   {
                 ex.printStackTrace();
 
             }
-
-
             try {
                 Thread.sleep(200000);
             }catch (InterruptedException e) {

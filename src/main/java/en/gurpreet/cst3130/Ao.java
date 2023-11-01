@@ -52,13 +52,10 @@ public class Ao extends WebScrapper implements Runnable   {
 
         /* web scrapping starts here*/
         while (true){
-
             try {
-
                 final Document document = Jsoup.connect(url).get();
 
                 System.out.print("Pagination started 1 " + url + "\n");
-
                 Elements products = document.select("script");
 
                 for (Element script : products) {
@@ -69,7 +66,6 @@ public class Ao extends WebScrapper implements Runnable   {
                         JSONArray arrayOfProducts = extractedData.getJSONArray("Products");
 
                         for (int i = 0; i < arrayOfProducts.length(); i++) {   // Start loop to insert products into the database
-
                             //Fetch JSON data and clean it to get product name
                             JSONObject product = (JSONObject) arrayOfProducts.get(i);
                             //Store the name, size and model into a temporary variable
@@ -79,7 +75,6 @@ public class Ao extends WebScrapper implements Runnable   {
                                     .replace(" in ", "")
                                     .replace("gb","GB")
                                     .replace("(PRODUCT) RED", "Red");
-                                //    .replace("  ", "");
                             //Fetch JSON data and clean it to get product price
                             JSONObject itemPrice = (JSONObject) product.get("PricePodViewModel");
                             //Store the price into a temporary variable

@@ -5,10 +5,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
 
 /**
  *  Hibernate configuration file
@@ -59,16 +57,12 @@ public class HibernateConfig {
                 e.printStackTrace();
                 StandardServiceRegistryBuilder.destroy( registry );
             }
-
-
         }
         catch (Throwable ex) {
             // Make sure you log the exception, as it might be swallowed
             System.err.println("SessionFactory creation failed." + ex);
         }
     }
-
-
     /** create a new session
      * @return session
      * */
@@ -76,7 +70,6 @@ public class HibernateConfig {
         Session session = sessionFactory.openSession();
         return session;
     }
-
     /** Destroy Session Factory */
     public void close(){
          sessionFactory.close();;
@@ -152,7 +145,6 @@ public class HibernateConfig {
             savePrice(price);
         }
 
-
     }
     /** Find the phone, if it is not found, then create a new phone object
      * @param phone is the phone to be find
@@ -164,7 +156,6 @@ public class HibernateConfig {
 
         //Start transaction
         session.beginTransaction();
-        //Query query = session.createQuery("from Phone WHERE model = ' iPhone 13 Pro Max ' AND storage = '128gb' AND colour = 'Gold'"  );
 
         //Build query string
         String queryStr = "from Phone WHERE model ='" + phone.getModel() +"' AND storage ='"+phone.getStorage()+"' AND color ='"+phone.getColor()+"'";

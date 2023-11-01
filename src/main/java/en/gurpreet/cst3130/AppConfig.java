@@ -21,8 +21,6 @@ public class AppConfig {
     public Thread amazon(){
         Amazon amazon = new Amazon();
         amazon.setUrl("https://www.amazon.co.uk/s?k=apple+iphone&i=electronics&rh=n%3A560798%2Cn%3A1340509031%2Cn%3A5362060031%2Cp_n_condition-type%3A12319067031%2Cp_89%3AApple%2Cp_36%3A40000-&dc&page=");
-
-      //   amazon.setUrl("https://www.amazon.co.uk/s?k=iphone&i=electronics&bbn=560798&rh=n%3A560798%2Cp_n_condition-type%3A12319067031%2Cp_89%3AApple%2Cp_76%3A419158031%2Cp_6%3AA3P5ROKL5A1OLE&dc&page=");
         amazon.setWebsite("Amazon");
         return new Thread(amazon);
     }
@@ -51,8 +49,6 @@ public class AppConfig {
     public Thread onbuy(){
         Onbuy onbuy = new Onbuy();
         onbuy.setUrl("https://www.onbuy.com/gb/mobile-phones~c12871/iphones~g12852/?category=12871&brand=274&condition=1&offset=");
-        //https://www.onbuy.com/gb/mobile-phones~c12871/iphones~g12852/?category=12871&brand=274&condition=1&offset=60
-        //  onbuy.setUrl("https://www.onbuy.com/gb/mobile-phones~c12871/?condition=1&brand=274&feature=29127-195929&offset=");
         onbuy.setWebsite("Onbuy");
         return new Thread(onbuy);
     }
@@ -75,13 +71,11 @@ public class AppConfig {
     @Bean
     public ScrapperManager threadManager(){
         ScrapperManager threadManager = new ScrapperManager();
-      threadManager.addToList(onbuy());
-      //  threadManager.addToList(argos());
-     //   threadManager.addToList(mobiles());
-       // threadManager.addToList(ao());
-   //    threadManager.addToList(amazon());
+        threadManager.addToList(onbuy());
+        threadManager.addToList(argos());
+        threadManager.addToList(mobiles());
+        threadManager.addToList(ao());
+        threadManager.addToList(amazon());
         return threadManager;
     }
-
 }
-

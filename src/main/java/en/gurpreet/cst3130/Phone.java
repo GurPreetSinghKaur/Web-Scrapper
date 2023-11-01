@@ -31,7 +31,6 @@ public class Phone {
     public List<Price> getPriceEntity() {
         return priceEntity;
     }
-
     public void setPriceEntity(List<Price> priceEntity) {
         this.priceEntity = priceEntity;
     }
