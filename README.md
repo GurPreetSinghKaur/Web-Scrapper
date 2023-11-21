@@ -32,5 +32,5 @@ This project is built using the following technologies:
 
 - `/Web-Scraper`: Contains the Java source code for scraping data.
 - `RestfulAPI/`: Restful API directory can be found [here](https://github.com/GurPreetSinghKaur/RestfulAPI)
-- `/assets`: Contains public assets, e.g., images, stylesheets.  
+- `/assets`: Contains public assets, e.g., images.  
 
