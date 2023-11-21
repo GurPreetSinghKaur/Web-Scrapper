@@ -27,10 +27,25 @@ This project is built using the following technologies:
 
 * User-Friendly Interface: The web interface is designed for user-friendliness, allowing the user to quickly and easily view price comparisons as well as access the specific iPhone in the particular website.
 
+### Screenshots
+
+- Home Page
+![Screenshot of Home Page](https://github.com/GurPreetSinghKaur/Web-Application/blob/master/img/Home.jpg)
+
+- Search Feature
+![Screenshot of Search Feature](https://github.com/GurPreetSinghKaur/Web-Application/blob/master/img/Search.jpg)
+
+- View all Phones
+![Screenshot of View all Page](https://github.com/GurPreetSinghKaur/Web-Application/blob/master/img/Phones.jpg)
+
+## License
+
+This project is licensed under the MIT Licence. See the [LICENSE](LICENSE) file for details.
 
 ## Project Structure
 
 - `/Web-Scraper`: Contains the Java source code for scraping data.
 - `RestfulAPI/`: Restful API directory can be found [here](https://github.com/GurPreetSinghKaur/RestfulAPI)
-- `/assets`: Contains public assets, e.g., images.  
+- `Web-Application/`: Web-Application directory can be found [here](https://github.com/GurPreetSinghKaur/Web-Application)
+
 
