@@ -16,6 +16,7 @@ scraping. The application can be stopped by typing “q” in the console.
 4. [Testing](#testing)
 5. [Project Structure](#project-structure)
 6. [License](#license)
+7. [Contact](#contact)
 
 
 ## Technologies
@@ -75,5 +76,5 @@ This project is licensed under the MIT Licence. See the [LICENSE](LICENSE) file 
 ## Contact
 
 For any questions or inquiries, feel free to reach out:
-
+ - GurPreetSinghKaur@Outlook.com
  
