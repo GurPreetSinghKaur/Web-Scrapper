@@ -10,6 +10,13 @@ scraping. The application can be stopped by typing “q” in the console.
 
 ## Table of Contents
 
+1. [Technologies](#technologies)
+2. [Features](#features)
+3. [Screenshots](#screenshots)
+4. [Testing](#testing)
+5. [Project Structure](#project-structure)
+6. [License](#license)
+
 
 ## Technologies
 This project is built using the following technologies:
@@ -53,12 +60,6 @@ This project uses Junit 5 testing with Maven and Mocha/Chai for the REST API.
   
 
 
-
-
-## License
-
-This project is licensed under the MIT Licence. See the [LICENSE](LICENSE) file for details.
-
 ## Project Structure
 
 - `/Web-Scraper`: Contains the Java source code for scraping data.
@@ -67,3 +68,12 @@ This project is licensed under the MIT Licence. See the [LICENSE](LICENSE) file 
 - `Web-Application/`: Web-Application directory can be found [here](https://github.com/GurPreetSinghKaur/Web-Application)
 
 
+## License
+
+This project is licensed under the MIT Licence. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For any questions or inquiries, feel free to reach out:
+
+ 
