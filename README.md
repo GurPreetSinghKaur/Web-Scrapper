@@ -16,7 +16,7 @@ This project is built using the following technologies:
 
 - Java, Maven, Spring, Hibernate, MySQL (for web scraping and backend)
 - JavaScript, NodeJs, HTML, CSS (for the web application)
-- Deployed using Railway.app (MySQL and Java containers)  
+- Deployed using Railway.app which uses Docker (MySQL and Java containers)  
 
 ## Features 
 * Web Scraping: The app scrapes iPhone prices from five predefined websites. This ensures you have access to real-time pricing information.
@@ -38,6 +38,23 @@ This project is built using the following technologies:
 - View all Phones
 ![Screenshot of View all Page](https://github.com/GurPreetSinghKaur/Web-Application/blob/master/img/Phones.jpg)
 
+## Testing
+
+This project uses Junit 5 testing with Maven and Mocha/Chai for the REST API. 
+
+- HibernateTest.java -Initialise a session factory before and executes tests in a certain order.
+![Screenshot of HibernateTest.java](https://github.com/GurPreetSinghKaur/Web-Application/blob/master/img/HibernateTest.jpg)
+
+- UtilityTest.java -Test Java class which is used in the scrappers.
+![Screenshot of UtilityTest.java](https://github.com/GurPreetSinghKaur/Web-Application/blob/master/img/UtilityTest.jpg)
+
+- API.test.js -REST API Testing with Mocha/Chai
+![Screenshot of API.test.js](https://github.com/GurPreetSinghKaur/Web-Application/blob/master/img/API_test.jpg)
+  
+
+
+
+
 ## License
 
 This project is licensed under the MIT Licence. See the [LICENSE](LICENSE) file for details.
@@ -45,6 +62,7 @@ This project is licensed under the MIT Licence. See the [LICENSE](LICENSE) file 
 ## Project Structure
 
 - `/Web-Scraper`: Contains the Java source code for scraping data.
+- `/Web-Scraper/src/test/java/en/gurpreet/cst3130`: Contains test files for Java and JavaScript
 - `RestfulAPI/`: Restful API directory can be found [here](https://github.com/GurPreetSinghKaur/RestfulAPI)
 - `Web-Application/`: Web-Application directory can be found [here](https://github.com/GurPreetSinghKaur/Web-Application)
 
