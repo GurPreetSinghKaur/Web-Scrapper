@@ -37,13 +37,13 @@ This project is built using the following technologies:
 
 ### Screenshots
 
-- Home Page
+- Home page
 ![Screenshot of Home Page](https://github.com/GurPreetSinghKaur/Web-Application/blob/master/img/Home.jpg)
 
-- Search Feature
+- Search feature
 ![Screenshot of Search Feature](https://github.com/GurPreetSinghKaur/Web-Application/blob/master/img/Search.jpg)
 
-- View all Phones
+- View all phones
 ![Screenshot of View all Page](https://github.com/GurPreetSinghKaur/Web-Application/blob/master/img/Phones.jpg)
 
 ## Testing
@@ -63,11 +63,13 @@ This project uses Junit 5 testing with Maven and Mocha/Chai for the REST API.
 
 ## Project Structure
 
-- `/Web-Scraper`: Contains the Java source code for scraping data.
+- `/Web-Scraper`: Contains the Java source code for scraping data
 - `/Web-Scraper/src/test/java/en/gurpreet/cst3130`: Contains test files for Java and JavaScript
 - `RestfulAPI/`: Restful API directory can be found [here](https://github.com/GurPreetSinghKaur/RestfulAPI)
 - `Web-Application/`: Web-Application directory can be found [here](https://github.com/GurPreetSinghKaur/Web-Application)
-
+- Access Web Application [here](https://web-application-production.up.railway.app/)
+- Deployed Architecture (Railway.app)
+![Screenshot of Railway.app architecture](https://github.com/GurPreetSinghKaur/Web-Application/blob/master/img/railway.app.jpg)
 
 ## License
 
